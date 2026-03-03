@@ -31,6 +31,21 @@ $current = basename($_SERVER['PHP_SELF']);
         <i class="fa-solid fa-book"></i> Subjects
     </a>
 
+    <a href="FacultySubjectController.php"
+       class="<?= $current == 'FacultySubjectController.php' ? 'active' : '' ?>">
+        <i class="fa-solid fa-link"></i> Faculty Subject
+    </a>
+
+    <a href="SyllabusController.php"
+       class="<?= $current == 'SyllabusController.php' ? 'active' : '' ?>">
+        <i class="fa-solid fa-file-lines"></i> Syllabus
+    </a>
+
+    <a href="NotesController.php"
+       class="<?= $current == 'NotesController.php' ? 'active' : '' ?>">
+        <i class="fa-solid fa-note-sticky"></i> Notes
+    </a>
+
     <a href="AttendanceController.php"
        class="<?= $current == 'AttendanceController.php' ? 'active' : '' ?>">
         <i class="fa-solid fa-calendar-check"></i> Attendance
