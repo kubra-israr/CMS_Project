@@ -1,39 +1,77 @@
-<h2>Add Faculty</h2>
+<link rel="stylesheet" href="/CMS_project/Assets/css/modules.css">
 
-<form method="POST">
+<div class="main">
 
-First Name:
-<input type="text" name="first_name" required><br><br>
+<h2 class="page-title">Add Faculty</h2>
 
-Last Name:
-<input type="text" name="last_name" required><br><br>
+<div class="form-card">
 
-Email:
-<input type="email" name="email" required><br><br>
+<form method="POST" action="FacultyController.php?action=create">
 
-Phone:
-<input type="text" name="phone"><br><br>
+<input type="text"
+name="first_name"
+placeholder="First Name"
+required>
 
-Department:
+<input type="text"
+name="last_name"
+placeholder="Last Name"
+required>
+
+<input type="email"
+name="email"
+placeholder="Email"
+required>
+
+<input type="text"
+name="phone"
+placeholder="Phone Number"
+required>
+
 <select name="department_id" required>
-    <?php while($row = $departments->fetch_assoc()) { ?>
-        <option value="<?= $row['department_id'] ?>">
-            <?= $row['department_name'] ?>
-        </option>
-    <?php } ?>
-</select><br><br>
 
-Designation:
-<input type="text" name="designation"><br><br>
+<option value="">Select Department</option>
 
-Join Date:
-<input type="date" name="join_date"><br><br>
+<?php while($row = $departments->fetch_assoc()) { ?>
 
-Password:
-<input type="password" name="password"><br><br>
+<option value="<?= $row['department_id'] ?>">
+<?= $row['department_name'] ?>
+</option>
 
-<button type="submit">Add Faculty</button>
+<?php } ?>
+
+</select>
+
+<input type="text"
+name="designation"
+placeholder="Designation"
+required>
+
+<label>Join Date</label>
+
+<input type="date"
+name="join_date"
+required>
+
+<input type="password"
+name="password"
+placeholder="Create Password"
+required>
+
+<button type="submit" class="btn btn-submit">
+Add Faculty
+</button>
 
 </form>
 
-<a href="FacultyController.php">Back</a>
+</div>
+
+<div class="center-btn">
+
+<a href="FacultyController.php" class="btn btn-add">
+Back to Faculty List
+</a>
+
+</div>
+
+</div>

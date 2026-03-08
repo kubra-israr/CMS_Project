@@ -1,44 +1,62 @@
-<h2>Edit Student</h2>
+<link rel="stylesheet" href="/CMS_project/Assets/css/modules.css">
+
+<h2 class="page-title">Edit Student</h2>
+
+<div class="form-card">
 
 <form method="POST">
 
-First Name:
+<label>First Name</label>
 <input type="text" name="first_name"
-       value="<?= $student['first_name'] ?>" required><br><br>
+value="<?= $student['first_name'] ?>">
 
-Last Name:
+<label>Last Name</label>
 <input type="text" name="last_name"
-       value="<?= $student['last_name'] ?>" required><br><br>
+value="<?= $student['last_name'] ?>">
 
-Email:
+<label>Email</label>
 <input type="email" name="email"
-       value="<?= $student['email'] ?>"><br><br>
+value="<?= $student['email'] ?>">
 
-Phone:
+<label>Phone</label>
 <input type="text" name="phone"
-       value="<?= $student['phone'] ?>"><br><br>
+value="<?= $student['phone'] ?>">
 
-Department:
+<label>Department</label>
+
 <select name="department_id">
+
 <?php while($row = $departments->fetch_assoc()) { ?>
-    <option value="<?= $row['department_id'] ?>"
-        <?= $row['department_id'] == $student['department_id'] ? 'selected' : '' ?>>
-        <?= $row['department_name'] ?>
-    </option>
+
+<option value="<?= $row['department_id'] ?>"
+<?= $row['department_id'] == $student['department_id'] ? 'selected' : '' ?>>
+
+<?= $row['department_name'] ?>
+
+</option>
+
 <?php } ?>
-</select><br><br>
 
-Semester:
+</select>
+
+<label>Semester</label>
 <input type="number" name="semester"
-       value="<?= $student['semester'] ?>"><br><br>
+value="<?= $student['semester'] ?>">
 
-Join Date:
+<label>Join Date</label>
 <input type="date" name="join_date"
-       value="<?= $student['join_date'] ?>"><br><br>
+value="<?= $student['join_date'] ?>">
 
-<button type="submit">Update Student</button>
+<button type="submit" class="btn btn-submit">
+Update Student
+</button>
 
 </form>
 
-<br>
-<a href="StudentController.php">Back</a>
+</div>
+
+<div class="center-btn">
+<a href="StudentController.php" class="btn btn-add">
+Back
+</a>
+</div>

@@ -1,14 +1,40 @@
-<h2>Edit Department</h2>
+<link rel="stylesheet" href="/CMS_project/Assets/css/modules.css">
 
-<form method="POST" action="DepartmentController.php?action=update">
-    <input type="hidden" name="department_id" value="<?= $department['department_id'] ?>">
+<div class="main">
 
-    <input type="text" name="department_name"
-           value="<?= $department['department_name'] ?>" required>
+<h2 class="page-title">Edit Department</h2>
 
-    <button type="submit">Update Department</button>
+<div class="form-wrapper">
+
+<div class="form-card">
+
+<form method="POST" action="../controllers/DepartmentController.php?action=update">
+
+<input type="hidden" name="department_id" value="<?= $department['department_id'] ?>">
+
+<input 
+type="text"
+name="department_name"
+value="<?= $department['department_name'] ?>"
+required
+>
+
+<button type="submit" class="btn btn-submit">
+Update Department
+</button>
+
 </form>
 
-<br>
+</div>
 
-<a href="DepartmentController.php">Back</a>
+</div>
+
+<div class="center-btn">
+
+<a href="../controllers/DepartmentController.php" class="btn btn-add">
+Back to Departments
+</a>
+
+</div>
+
+</div>

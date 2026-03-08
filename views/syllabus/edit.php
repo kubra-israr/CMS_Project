@@ -1,35 +1,50 @@
-<h2>Edit Syllabus</h2>
+<link rel="stylesheet" href="/CMS_project/assets/css/modules.css">
 
-<form method="POST">
+<h2 class="page-title">Edit Syllabus</h2>
 
-Subject:
-<select name="subject_id">
+<div class="form-card">
+
+<form method="POST" enctype="multipart/form-data">
+
+<label>Subject</label>
+<select name="subject_id" required>
+
 <?php while($row = $subjects->fetch_assoc()) { ?>
-    <option value="<?= $row['subject_id'] ?>"
-        <?= $row['subject_id'] == $syllabus['subject_id'] ? 'selected' : '' ?>>
-        <?= $row['subject_name'] ?>
-    </option>
+
+<option value="<?= $row['subject_id'] ?>"
+<?= ($row['subject_id'] == ($record['subject_id'] ?? '')) ? 'selected' : '' ?>>
+
+<?= $row['subject_name'] ?>
+
+</option>
+
 <?php } ?>
-</select><br><br>
 
-Faculty:
-<select name="faculty_id">
-<?php while($row = $faculties->fetch_assoc()) { ?>
-    <option value="<?= $row['faculty_id'] ?>"
-        <?= $row['faculty_id'] == $syllabus['faculty_id'] ? 'selected' : '' ?>>
-        <?= $row['first_name'] . " " . $row['last_name'] ?>
-    </option>
+</select>
+
+<label>Upload New File</label>
+<input type="file" name="file">
+
+<p>Current File:
+<?php if (!empty($record['file_path'])) { ?>
+    <a href="/CMS_project/uploads/syllabus/<?= htmlspecialchars($record['file_path']) ?>" target="_blank">
+        View
+    </a>
+<?php } else { ?>
+    No File
 <?php } ?>
-</select><br><br>
+</p>
 
-File Path:
-<input type="text" name="file_path" value="<?= $syllabus['file_path'] ?>"><br><br>
-
-Upload Date:
-<input type="date" name="upload_date" value="<?= $syllabus['upload_date'] ?>"><br><br>
-
-<button type="submit">Update</button>
+<button type="submit" class="btn btn-submit">
+Update Syllabus
+</button>
 
 </form>
 
-<a href="SyllabusController.php">Back</a>
+</div>
+
+<div class="center-btn">
+<a href="SyllabusController.php" class="btn btn-add">
+Back
+</a>
+</div>

@@ -1,37 +1,53 @@
-<h2>Add Student</h2>
+<link rel="stylesheet" href="/CMS_project/Assets/css/modules.css">
+
+<h2 class="page-title">Add Student</h2>
+
+<div class="form-card">
 
 <form method="POST">
 
-First Name:
-<input type="text" name="first_name" required><br><br>
+<label>First Name</label>
+<input type="text" name="first_name" required>
 
-Last Name:
-<input type="text" name="last_name" required><br><br>
+<label>Last Name</label>
+<input type="text" name="last_name" required>
 
-Email:
-<input type="email" name="email"><br><br>
+<label>Email</label>
+<input type="email" name="email">
 
-Phone:
-<input type="text" name="phone"><br><br>
+<label>Phone</label>
+<input type="text" name="phone">
 
-Department:
+<label>Department</label>
+
 <select name="department_id">
+
 <?php while($row = $departments->fetch_assoc()) { ?>
-    <option value="<?= $row['department_id'] ?>">
-        <?= $row['department_name'] ?>
-    </option>
+
+<option value="<?= $row['department_id'] ?>">
+<?= $row['department_name'] ?>
+</option>
+
 <?php } ?>
-</select><br><br>
 
-Semester:
-<input type="number" name="semester"><br><br>
+</select>
 
-Join Date:
-<input type="date" name="join_date"><br><br>
+<label>Semester</label>
+<input type="number" name="semester">
 
-<button type="submit">Add Student</button>
+<label>Join Date</label>
+<input type="date" name="join_date">
+
+<button type="submit" class="btn btn-submit">
+Add Student
+</button>
 
 </form>
 
-<br>
-<a href="StudentController.php">Back</a>
+</div>
+
+<div class="center-btn">
+<a href="StudentController.php" class="btn btn-add">
+Back
+</a>
+</div>

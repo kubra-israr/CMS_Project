@@ -39,10 +39,18 @@ class DepartmentModel {
     }
 
     // DELETE
-    public function delete($id) {
-        $stmt = $this->conn->prepare("DELETE FROM department WHERE department_id = ?");
-        $stmt->bind_param("i", $id);
-        return $stmt->execute();
+    public function delete($id){
+
+        $conn = $this->conn;
+
+        $stmt1 = $conn->prepare("DELETE FROM faculty WHERE department_id=?");
+        $stmt1->bind_param("i",$id);
+        $stmt1->execute();
+
+        $stmt2 = $conn->prepare("DELETE FROM department WHERE department_id=?");
+        $stmt2->bind_param("i",$id);
+        $stmt2->execute();
     }
-}
+
+}   
 ?>

@@ -15,23 +15,25 @@ $action = $_GET['action'] ?? 'list';
 if ($action == 'add') {
 
     if ($_POST) {
-
-        $targetDir = __DIR__ . "/../uploads/";
+        $targetDir = __DIR__ . '/../uploads/syllabus/';
 
         if (!is_dir($targetDir)) {
             mkdir($targetDir, 0777, true);
         }
 
-        $fileName = basename($_FILES["file"]["name"]);
-        $targetFile = $targetDir . $fileName;
+        $fileName = '';
 
-        move_uploaded_file($_FILES["file"]["tmp_name"], $targetFile);
+        if (!empty($_FILES["file"]["name"])) {
+            $fileName = time() . '_' . basename($_FILES["file"]["name"]);
+            $targetFile = $targetDir . $fileName;
+            move_uploaded_file($_FILES["file"]["tmp_name"], $targetFile);
+        }
 
         $syllabusModel->insert(
             $_POST['subject_id'],
             $_POST['faculty_id'],
             $fileName,
-            $_POST['upload_date']
+            date("Y-m-d")
         );
 
         header("Location: SyllabusController.php");
@@ -41,19 +43,36 @@ if ($action == 'add') {
     $subjects = $subjectModel->getAll();
     $faculties = $facultyModel->getAll();
     require __DIR__ . '/../views/syllabus/add.php';
-    
+
 } elseif ($action == 'edit') {
 
     $id = $_GET['id'];
+    $record = $syllabusModel->getById($id);
 
     if ($_POST) {
+
+        $fileName = $record['syllabus_file'] ?? $record['file_path'] ?? '';
+
+        if (!empty($_FILES["file"]["name"])) {
+            $targetDir = __DIR__ . '/../uploads/syllabus/';
+
+            if (!is_dir($targetDir)) {
+                mkdir($targetDir, 0777, true);
+            }
+
+            $fileName = time() . '_' . basename($_FILES["file"]["name"]);
+            $targetFile = $targetDir . $fileName;
+            move_uploaded_file($_FILES["file"]["tmp_name"], $targetFile);
+        }
+
         $syllabusModel->update(
             $id,
             $_POST['subject_id'],
             $_POST['faculty_id'],
-            $_POST['file_path'],
+            $fileName,
             $_POST['upload_date']
         );
+
         header("Location: SyllabusController.php");
         exit();
     }

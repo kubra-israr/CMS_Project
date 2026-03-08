@@ -1,55 +1,84 @@
-<h2>Edit Faculty</h2>
+<link rel="stylesheet" href="/CMS_project/Assets/css/modules.css">
 
-<form method="POST">
+<h2 class="page-title">Edit Faculty</h2>
 
-First Name:
-<input type="text" name="first_name"
-value="<?= $faculty['first_name'] ?>" required>
-<br><br>
+<div class="form-card">
 
-Last Name:
-<input type="text" name="last_name"
-value="<?= $faculty['last_name'] ?>" required>
-<br><br>
+<form method="POST" action="FacultyController.php?action=update">
 
-Email:
-<input type="email" name="email"
-value="<?= $faculty['email'] ?>" required>
-<br><br>
+<label>First Name</label>
+<div class="input-group">
+<i class="fa-solid fa-user"></i>
+<input type="text" name="first_name" value="<?= $faculty['first_name'] ?>" required>
+</div>
 
-Phone:
-<input type="text" name="phone"
-value="<?= $faculty['phone'] ?>">
-<br><br>
+<label>Last Name</label>
+<div class="input-group">
+<i class="fa-solid fa-user"></i>
+<input type="text" name="last_name" value="<?= $faculty['last_name'] ?>" required>
+</div>
 
-Department:
-<select name="department_id" required>
+<label>Email</label>
+<div class="input-group">
+<i class="fa-solid fa-envelope"></i>
+<input type="email" name="email" value="<?= $faculty['email'] ?>" required>
+</div>
+
+<label>Phone Number</label>
+<div class="input-group">
+<i class="fa-solid fa-phone"></i>
+<input type="text" name="phone" value="<?= $faculty['phone'] ?>" required>
+</div>
+
+<label>Department</label>
+<select name="department_id">
+
 <?php while($row = $departments->fetch_assoc()) { ?>
-    <option value="<?= $row['department_id'] ?>"
-        <?= ($row['department_id'] == $faculty['department_id']) ? 'selected' : '' ?>>
-        <?= $row['department_name'] ?>
-    </option>
+
+<option value="<?= $row['department_id'] ?>"
+<?= $row['department_id'] == $faculty['department_id'] ? 'selected' : '' ?>>
+
+<?= $row['department_name'] ?>
+
+</option>
+
 <?php } ?>
+
 </select>
-<br><br>
 
-Designation:
-<input type="text" name="designation"
-value="<?= $faculty['designation'] ?>">
-<br><br>
+<label>Designation</label>
+<div class="input-group">
+<i class="fa-solid fa-briefcase"></i>
+<input type="text" name="designation" value="<?= $faculty['designation'] ?>">
+</div>
 
-Join Date:
-<input type="date" name="join_date"
-value="<?= $faculty['join_date'] ?>">
-<br><br>
+<label>Join Date</label>
+<div class="input-group">
+<i class="fa-solid fa-calendar"></i>
+<input type="date" name="join_date" value="<?= $faculty['join_date'] ?>">
+</div>
 
-Password:
-<input type="text" name="password"
-value="<?= $faculty['password'] ?>">
-<br><br>
+<label>Password</label>
+<div class="input-group password-box">
+<i class="fa-solid fa-lock"></i>
+<input type="password" id="password" name="password" value="<?= $faculty['password'] ?>">
+<span onclick="togglePassword()" class="toggle-pass">
+<i class="fa-solid fa-eye"></i>
+</span>
+</div>
 
-<button type="submit">Update Faculty</button>
+<button type="submit" class="btn btn-submit">
+Update Faculty
+</button>
 
 </form>
 
-<a href="FacultyController.php">Back</a>
+</div>
+
+<div class="center-btn">
+<a href="FacultyController.php" class="btn btn-add">
+Back to Faculty List
+</a>
+</div>
+</a>
+

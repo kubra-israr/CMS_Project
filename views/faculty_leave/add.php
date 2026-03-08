@@ -1,31 +1,53 @@
-<h2>Apply Leave</h2>
+<link rel="stylesheet" href="/CMS_project/Assets/css/modules.css">
+
+<h2 class="page-title">Apply Leave</h2>
+
+<div class="form-card">
 
 <form method="POST">
 
-Faculty:
+<label>Faculty</label>
 <select name="faculty_id" required>
+
 <?php while($row = $faculties->fetch_assoc()) { ?>
-    <option value="<?= $row['faculty_id'] ?>">
-        <?= $row['first_name'] . " " . $row['last_name'] ?>
-    </option>
+
+<option value="<?= $row['faculty_id'] ?>">
+
+<?= $row['first_name'] . " " . $row['last_name'] ?>
+
+</option>
+
 <?php } ?>
-</select><br><br>
 
-Leave Type:
-<input type="text" name="leave_type" required><br><br>
+</select>
 
-From Date:
-<input type="date" name="from_date" required><br><br>
 
-To Date:
-<input type="date" name="to_date" required><br><br>
+<label>Leave Type</label>
+<input type="text" name="leave_type" placeholder="Sick Leave / Casual Leave" required>
 
-Reason:
-<textarea name="reason"></textarea><br><br>
 
-<button type="submit">Submit Leave</button>
+<label>From Date</label>
+<input type="date" name="from_date" required>
+
+
+<label>To Date</label>
+<input type="date" name="to_date" required>
+
+
+<label>Reason</label>
+<textarea name="reason" rows="4" placeholder="Enter reason"></textarea>
+
+
+<button type="submit" class="btn btn-submit">
+Submit Leave
+</button>
 
 </form>
 
-<br>
-<a href="FacultyLeaveController.php">Back</a>
+</div>
+
+<div class="center-btn">
+<a href="FacultyLeaveController.php" class="btn btn-add">
+Back
+</a>
+</div>

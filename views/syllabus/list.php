@@ -1,39 +1,61 @@
-<h2>Syllabus List</h2>
+<link rel="stylesheet" href="/CMS_project/assets/css/modules.css">
 
-<a href="SyllabusController.php?action=add">Add New</a>
-<br><br>
+<h2 class="page-title">Syllabus</h2>
 
-<?php if ($records && $records->num_rows > 0) { ?>
+<div class="table-wrapper">
 
-<table border="1" cellpadding="10">
+<div class="top-bar">
+<a href="SyllabusController.php?action=add" class="btn btn-add">
+Upload Syllabus
+</a>
+</div>
+
+<table class="table">
+
 <tr>
-    <th>ID</th>
-    <th>Subject</th>
-    <th>Faculty</th>
-    <th>File</th>
-    <th>Date</th>
-    <th>Action</th>
+<th>ID</th>
+<th>Subject</th>
+<th>File</th>
+<th>Actions</th>
 </tr>
 
 <?php while($row = $records->fetch_assoc()) { ?>
+
 <tr>
-    <td><?= $row['syllabus_id'] ?></td>
-    <td><?= $row['subject_name'] ?></td>
-    <td><?= $row['first_name'] . " " . $row['last_name'] ?></td>
-    <td><?= $row['file_path'] ?></td>
-    <td><?= $row['upload_date'] ?></td>
-    <td>
-        <a href="SyllabusController.php?action=edit&id=<?= $row['syllabus_id'] ?>">Edit</a> |
-        <a href="SyllabusController.php?action=delete&id=<?= $row['syllabus_id'] ?>"
-           onclick="return confirm('Are you sure?')">Delete</a>
-    </td>
+
+<td><?= $row['syllabus_id'] ?></td>
+
+<td><?= $row['subject_name'] ?></td>
+
+<td>
+<?php if (!empty($row['file_path'])) { ?>
+    <a href="/CMS_project/uploads/syllabus/<?= htmlspecialchars($row['file_path']) ?>" target="_blank">
+        View
+    </a>
+<?php } else { ?>
+    No File
+<?php } ?>
+</td>
+
+<td>
+
+<a href="SyllabusController.php?action=edit&id=<?= $row['syllabus_id'] ?>"
+class="btn btn-edit">
+Edit
+</a>
+
+<a href="SyllabusController.php?action=delete&id=<?= $row['syllabus_id'] ?>"
+class="btn btn-delete"
+onclick="return confirm('Are you sure?')">
+Delete
+</a>
+
+</td>
+
 </tr>
+
 <?php } ?>
 
 </table>
 
-<?php } else { ?>
-
-<p>No syllabus records found.</p>
-
-<?php } ?>
+</div>

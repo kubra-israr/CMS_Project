@@ -1,33 +1,42 @@
-<h2>Add Notes</h2>
+<link rel="stylesheet" href="/CMS_project/assets/css/modules.css">
+
+<h2 class="page-title">Upload Notes</h2>
+
+<div class="form-card">
 
 <form method="POST" enctype="multipart/form-data">
 
-Subject:
+<label>Subject</label>
+
 <select name="subject_id" required>
+
 <?php while($row = $subjects->fetch_assoc()) { ?>
-    <option value="<?= $row['subject_id'] ?>">
-        <?= $row['subject_name'] ?>
-    </option>
+
+<option value="<?= $row['subject_id'] ?>">
+<?= $row['subject_name'] ?>
+</option>
+
 <?php } ?>
-</select><br><br>
 
-Faculty:
-<select name="faculty_id" required>
-<?php while($row = $faculties->fetch_assoc()) { ?>
-    <option value="<?= $row['faculty_id'] ?>">
-        <?= $row['first_name'] . " " . $row['last_name'] ?>
-    </option>
-<?php } ?>
-</select><br><br>
+</select>
+<label>Title</label>
+<input type="text" name="title" placeholder="Enter Notes Title" required>
 
-Upload File:
-<input type="file" name="file" required><br><br>
+<label>Upload File</label>
 
-Upload Date:
-<input type="date" name="upload_date" required><br><br>
+<input type="file" name="file" accept=".pdf,.doc,.docx" required>
 
-<button type="submit">Add Notes</button>
+<button type="submit" class="btn btn-submit">
+Upload Notes
+</button>
 
 </form>
 
-<a href="NotesController.php">Back</a>
+</div>
+
+
+<div class="center-btn">
+<a href="NotesController.php" class="btn btn-add">
+Back
+</a>
+</div>

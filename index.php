@@ -1,11 +1,14 @@
 <?php
-require_once 'config/database.php';
 
-if ($database_connected) {
-    echo "CMS Project Working Successfully<br>";
-    echo "Database Connected";
+include "config/database.php";
+
+echo "CMS Project Working Successfully <br>";
+
+if ($conn) {
+    echo "Database Connected Successfully";
 } else {
-    echo "CMS Project Working Successfully<br>";
+    
     echo "Database Connection Failed";
 }
+
 ?>

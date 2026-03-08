@@ -1,0 +1,178 @@
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+/* BODY */
+
+body{
+background:#e9e7f4;
+color:#333;
+}
+
+/* LAYOUT */
+
+.wrapper{
+display:flex;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+width:240px;
+height:100vh;
+background:#0d2545;
+color:white;
+position:fixed;
+left:0;
+top:0;
+padding-top:20px;
+}
+
+.sidebar h2{
+padding:20px;
+font-size:22px;
+}
+
+/* SIDEBAR LINKS */
+
+.sidebar a{
+display:flex;
+align-items:center;
+gap:10px;
+padding:12px 20px;
+margin:6px 12px;
+color:white;
+text-decoration:none;
+border-radius:25px;
+transition:0.3s;
+}
+
+/* TEXT UNDERLINE */
+
+.sidebar a span{
+position:relative;
+}
+
+.sidebar a span::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-3px;
+width:0%;
+height:2px;
+background:#6366f1;
+transition:0.3s;
+}
+
+.sidebar a:hover span::after{
+width:100%;
+}
+
+/* ACTIVE MENU */
+
+.sidebar a.active{
+background:#6366f1;
+}
+
+/* HEADER */
+
+.header{
+position:fixed;
+top:0;
+left:240px;
+right:0;
+height:60px;
+background:#6366f1;
+color:white;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 30px;
+z-index:1000;
+}
+
+.header h1{
+font-size:18px;
+}
+
+.header-right{
+font-size:14px;
+}
+
+/* MAIN CONTENT */
+
+.main{
+margin-left:240px;
+padding:90px 30px;
+}
+
+/* DASHBOARD CARDS */
+
+
+/* CARD */
+
+.dashboard-cards{
+display:flex;
+gap:25px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+
+.card{
+background:white;
+padding:20px;
+width:200px;
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+position:relative;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card h3{
+font-size:16px;
+color:#444;
+margin-bottom:10px;
+}
+
+.card p{
+font-size:26px;
+font-weight:bold;
+}
+
+.card i{
+position:absolute;
+right:15px;
+top:15px;
+font-size:28px;
+opacity:0.2;
+}
+/* CARD COLORS */
+
+.card.departments{
+border-top:4px solid #6366f1;
+}
+
+.card.faculty{
+border-top:4px solid #22c55e;
+}
+
+.card.students{
+border-top:4px solid #f59e0b;
+}
+
+.card.subjects{
+border-top:4px solid #3b82f6;
+}
+
+.card.leaves{
+border-top:4px solid #ef4444;
+}

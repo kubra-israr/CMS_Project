@@ -1,0 +1,212 @@
+/* PAGE TITLE */
+
+.page-title{
+text-align:center;
+font-size:28px;
+margin-bottom:25px;
+color:#333;
+}
+
+/* CENTER BUTTON */
+
+.center-btn{
+display:flex;
+justify-content:center;
+margin-bottom:20px;
+}
+
+/* TABLE WRAPPER */
+
+.table-wrapper{
+width:80%;
+margin:0 auto;
+}
+/* TABLE */
+
+.table{
+width:100%;
+border-collapse:collapse;
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(10px);
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 6px 16px rgba(0,0,0,0.08);
+}
+
+.table th{
+background:#e2e8f0;
+padding:14px;
+text-align:left;
+font-size:15px;
+}
+
+.table td{
+padding:12px;
+border-top:1px solid #e5e7eb;
+}
+
+.table tr:hover{
+background:#eef2ff;
+transition:0.2s;
+}
+/* BUTTONS */
+
+.btn{
+padding:7px 14px;
+border-radius:8px;
+border:none;
+cursor:pointer;
+font-size:14px;
+text-decoration:none;
+color:white;
+transition:0.2s;
+}
+
+.btn i{
+margin-right:6px;
+}
+
+/* ADD BUTTON */
+
+.btn-add{
+background:#6366f1;
+}
+
+.btn-add:hover{
+background:#4f46e5;
+}
+
+/* EDIT BUTTON */
+
+.btn-edit{
+background:#22c55e;
+margin-right:6px;
+}
+
+.btn-edit:hover{
+background:#16a34a;
+}
+
+/* DELETE BUTTON */
+
+.btn-delete{
+background:#ef4444;
+}
+
+.btn-delete:hover{
+background:#dc2626;
+}
+
+/* FORM CARD */
+
+.form-card{
+background:rgba(255,255,255,0.65);
+backdrop-filter:blur(10px);
+padding:25px;
+border-radius:12px;
+box-shadow:0 6px 16px rgba(0,0,0,0.08);
+width:320px;
+margin:auto;
+}
+
+/* INPUT */
+
+.form-card input,
+.form-card select{
+width:100%;
+padding:10px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:6px;
+}
+
+.form-card input:focus{
+outline:none;
+border-color:#6366f1;
+box-shadow:0 0 0 2px rgba(99,102,241,0.2);
+}
+
+.form-card label{
+font-size:14px;
+font-weight:600;
+margin-bottom:5px;
+display:block;
+color:#444;
+}
+
+/* SUBMIT BUTTON */
+
+.btn-submit{
+background:#6366f1;
+width:100%;
+}
+
+.btn-submit:hover{
+background:#4f46e5;
+}
+
+.form-card{
+max-width:420px;
+margin:auto;
+}
+
+.center-btn{
+display:flex;
+justify-content:center;
+margin-top:20px;
+}
+
+.center-btn .btn{
+width:auto;
+padding:10px 20px;
+}
+
+textarea{
+width:90%;
+padding:10px;
+border:1px solid #ddd;
+border-radius:6px;
+resize:none;
+margin-bottom:15px;
+}
+
+.status{
+padding:5px 10px;
+border-radius:6px;
+font-size:12px;
+font-weight:600;
+}
+
+.status.pending{
+background:#fef3c7;
+color:#92400e;
+}
+
+.status.approved{
+background:#dcfce7;
+color:#166534;
+}
+
+.status.rejected{
+background:#fee2e2;
+color:#991b1b;
+}
+
+.top-bar{
+margin-bottom:15px;
+text-align:left;
+}
+
+.top-bar .btn{
+display:inline-block;
+}
+
+.icon{
+margin-right:6px;
+}
+
+.card-link{
+text-decoration:none;
+color:inherit;
+display:block;
+}

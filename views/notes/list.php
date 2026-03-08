@@ -1,35 +1,60 @@
-<h2>Notes List</h2>
+<link rel="stylesheet" href="/CMS_project/assets/css/modules.css">
 
-<a href="NotesController.php?action=add">Add New</a>
-<br><br>
+<h2 class="page-title">Notes</h2>
 
-<table border="1" cellpadding="10">
+<div class="table-wrapper">
+
+<div class="top-bar">
+<a href="NotesController.php?action=add" class="btn btn-add">
+Upload Notes
+</a>
+</div>
+
+<table class="table">
+
 <tr>
-    <th>ID</th>
-    <th>Subject</th>
-    <th>Faculty</th>
-    <th>File</th>
-    <th>Date</th>
-    <th>Action</th>
+<th>ID</th>
+<th>Subject</th>
+<th>Title</th>
+<th>File</th>
+<th>Actions</th>
 </tr>
 
 <?php while($row = $records->fetch_assoc()) { ?>
+
 <tr>
-    <td><?= $row['notes_id'] ?></td>
-    <td><?= $row['subject_name'] ?></td>
-    <td><?= $row['first_name'] . " " . $row['last_name'] ?></td>
-    <td>
-        <a href="../uploads/<?= $row['file_path'] ?>" target="_blank">
-            View File
-        </a>
-    </td>
-    <td><?= $row['upload_date'] ?></td>
-    <td>
-        <a href="NotesController.php?action=edit&id=<?= $row['notes_id'] ?>">Edit</a> |
-        <a href="NotesController.php?action=delete&id=<?= $row['notes_id'] ?>"
-           onclick="return confirm('Are you sure?')">Delete</a>
-    </td>
+
+<td><?= $row['notes_id'] ?></td>
+
+<td><?= $row['subject_name'] ?></td>
+
+<td><?= $row['title'] ?></td>
+
+<td>
+<a href="/CMS_project/uploads/notes/<?= $row['file_path'] ?>" target="_blank">
+View
+</a>
+</td>
+
+<td>
+
+<a href="NotesController.php?action=edit&id=<?= $row['notes_id'] ?>"
+class="btn btn-edit">
+Edit
+</a>
+
+<a href="NotesController.php?action=delete&id=<?= $row['notes_id'] ?>"
+class="btn btn-delete"
+onclick="return confirm('Are you sure?')">
+Delete
+</a>
+
+</td>
+
 </tr>
+
 <?php } ?>
 
 </table>
+
+</div>

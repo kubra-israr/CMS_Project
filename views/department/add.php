@@ -1,12 +1,29 @@
-<h2>Add Department</h2>
+<link rel="stylesheet" href="/CMS_project/Assets/css/modules.css">
 
-<form method="POST" action="/CMS_project/controllers/DepartmentController.php?action=create">
-    <input type="text" name="department_name" placeholder="Enter Department Name" required>
-    <button type="submit">Add Department</button>
+<h2 class="page-title">Add Department</h2>
+
+<div class="form-wrapper">
+
+<div class="form-card">
+
+<form method="POST" action="../controllers/DepartmentController.php?action=create">
+
+<label>Department Name</label>
+
+<input type="text" name="department_name" placeholder="Enter Department Name" required>
+
+<button type="submit" class="btn btn-submit">
+Add Department
+</button>
+
 </form>
 
-<br>
+</div>
 
-<a href="/CMS_project/controllers/DepartmentController.php">
-    View Departments
+</div>
+
+<div class="center-btn">
+<a href="../controllers/DepartmentController.php" class="btn btn-add">
+View Departments
 </a>
+</div>

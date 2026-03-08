@@ -1,29 +1,65 @@
-<h2>Edit Leave</h2>
+<link rel="stylesheet" href="/CMS_project/Assets/css/modules.css">
+
+<h2 class="page-title">Edit Leave</h2>
+
+<div class="form-card">
 
 <form method="POST">
 
-Leave Type:
-<input type="text" name="leave_type" value="<?= $leave['leave_type'] ?>" required><br><br>
+<label>Leave Type</label>
+<input type="text"
+name="leave_type"
+value="<?= $leave['leave_type'] ?>"
+required>
 
-From Date:
-<input type="date" name="from_date" value="<?= $leave['from_date'] ?>" required><br><br>
+<label>From Date</label>
+<input type="date"
+name="from_date"
+value="<?= $leave['from_date'] ?>"
+required>
 
-To Date:
-<input type="date" name="to_date" value="<?= $leave['to_date'] ?>" required><br><br>
+<label>To Date</label>
+<input type="date"
+name="to_date"
+value="<?= $leave['to_date'] ?>"
+required>
 
-Reason:
-<textarea name="reason"><?= $leave['reason'] ?></textarea><br><br>
+<label>Reason</label>
+<textarea name="reason" rows="4">
+<?= $leave['reason'] ?>
+</textarea>
 
-Status:
+<label>Status</label>
+
 <select name="status">
-    <option value="Pending" <?= $leave['status']=='Pending'?'selected':'' ?>>Pending</option>
-    <option value="Approved" <?= $leave['status']=='Approved'?'selected':'' ?>>Approved</option>
-    <option value="Rejected" <?= $leave['status']=='Rejected'?'selected':'' ?>>Rejected</option>
-</select><br><br>
 
-<button type="submit">Update</button>
+<option value="Pending"
+<?= $leave['status']=='Pending'?'selected':'' ?>>
+Pending
+</option>
+
+<option value="Approved"
+<?= $leave['status']=='Approved'?'selected':'' ?>>
+Approved
+</option>
+
+<option value="Rejected"
+<?= $leave['status']=='Rejected'?'selected':'' ?>>
+Rejected
+</option>
+
+</select>
+
+<button type="submit" class="btn btn-submit">
+Update Leave
+</button>
 
 </form>
 
-<br>
-<a href="FacultyLeaveController.php">Back</a>
+</div>
+
+<div class="center-btn">
+<a href="FacultyLeaveController.php" class="btn btn-add">
+Back
+</a>
+</div>
