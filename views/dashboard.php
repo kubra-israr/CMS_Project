@@ -15,56 +15,68 @@
     </div>
 
     <div class="stats-grid">
-        <div class="stat-card card-department">
-            <div class="stat-icon">
-                <i class="fa-solid fa-building"></i>
-            </div>
-            <div class="stat-content">
-                <h3><?= $departmentCount ?></h3>
-                <p>Total Departments</p>
-            </div>
-        </div>
 
-        <div class="stat-card card-faculty">
-            <div class="stat-icon">
-                <i class="fa-solid fa-chalkboard-user"></i>
-            </div>
-            <div class="stat-content">
-                <h3><?= $facultyCount ?></h3>
-                <p>Total Faculty</p>
-            </div>
-        </div>
+<a href="/CMS_project/controllers/DepartmentController.php" class="stat-card-link">
+<div class="stat-card card-department">
+<div class="stat-icon">
+<i class="fa-solid fa-building"></i>
+</div>
+<div class="stat-content">
+<h3><?= $departmentCount ?></h3>
+<p>Total Departments</p>
+</div>
+</div>
+</a>
 
-        <div class="stat-card card-student">
-            <div class="stat-icon">
-                <i class="fa-solid fa-user-graduate"></i>
-            </div>
-            <div class="stat-content">
-                <h3><?= $studentCount ?></h3>
-                <p>Total Students</p>
-            </div>
-        </div>
+<a href="/CMS_project/controllers/FacultyController.php" class="stat-card-link">
+<div class="stat-card card-faculty">
+<div class="stat-icon">
+<i class="fa-solid fa-chalkboard-user"></i>
+</div>
+<div class="stat-content">
+<h3><?= $facultyCount ?></h3>
+<p>Total Faculty</p>
+</div>
+</div>
+</a>
 
-        <div class="stat-card card-subject">
-            <div class="stat-icon">
-                <i class="fa-solid fa-book-open"></i>
-            </div>
-            <div class="stat-content">
-                <h3><?= $subjectCount ?></h3>
-                <p>Total Subjects</p>
-            </div>
-        </div>
+<a href="/CMS_project/controllers/StudentController.php" class="stat-card-link">
+<div class="stat-card card-student">
+<div class="stat-icon">
+<i class="fa-solid fa-user-graduate"></i>
+</div>
+<div class="stat-content">
+<h3><?= $studentCount ?></h3>
+<p>Total Students</p>
+</div>
+</div>
+</a>
 
-        <div class="stat-card card-leave">
-            <div class="stat-icon">
-                <i class="fa-solid fa-calendar-xmark"></i>
-            </div>
-            <div class="stat-content">
-                <h3><?= $leaveCount ?></h3>
-                <p>Leave Requests</p>
-            </div>
-        </div>
-    </div>
+<a href="/CMS_project/controllers/SubjectController.php" class="stat-card-link">
+<div class="stat-card card-subject">
+<div class="stat-icon">
+<i class="fa-solid fa-book-open"></i>
+</div>
+<div class="stat-content">
+<h3><?= $subjectCount ?></h3>
+<p>Total Subjects</p>
+</div>
+</div>
+</a>
+
+<a href="/CMS_project/controllers/FacultyLeaveController.php" class="stat-card-link">
+<div class="stat-card card-leave">
+<div class="stat-icon">
+<i class="fa-solid fa-calendar-xmark"></i>
+</div>
+<div class="stat-content">
+<h3><?= $leaveCount ?></h3>
+<p>Leave Requests</p>
+</div>
+</div>
+</a>
+
+</div>
 
     <div class="dashboard-panels">
         <div class="panel panel-large">
