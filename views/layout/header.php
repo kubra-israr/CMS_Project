@@ -6,44 +6,28 @@ if(session_status() === PHP_SESSION_NONE){
 
 <!DOCTYPE html>
 <html>
-
 <head>
-
-<title>CMS</title>
-
-<link rel="stylesheet" href="/CMS_project/assets/css/style.css">
-<link rel="stylesheet" href="/CMS_project/assets/css/modules.css">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
+    <title>CMS</title>
+    <link rel="stylesheet" href="/CMS_project/assets/css/modules.css">
+    <link rel="stylesheet" href="/CMS_project/assets/css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
 <div class="header">
+    <h1>College Management System</h1>
 
-<h1>College Management System</h1>
+    <div class="header-right">
+        Welcome, <?= htmlspecialchars($_SESSION['admin']['username'] ?? 'Admin') ?>
 
-<div class="header-right">
+        <?= date("d M Y") ?> |
 
-Welcome, <?= htmlspecialchars($_SESSION['admin']['username'] ?? 'Admin') ?>
+        <span id="live-clock"></span>
 
-<?= date("d M Y") ?> |
-
-<span id="live-clock"></span>
-
-<a href="/CMS_project/logout.php">
-<i class="fa-solid fa-right-from-bracket"></i> Logout
-</a>
-
-</div>
-
+        <a href="/CMS_project/logout.php">
+            <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </a>
+    </div>
 </div>
 
 <div class="wrapper">
-
-<?php include 'sidebar.php'; ?>
-
-<div class="main">
-    

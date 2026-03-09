@@ -16,7 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $admin = $result->fetch_assoc();
 
         if ($password === $admin['password']) {
-            $_SESSION['admin'] = $admin;
+            $_SESSION['admin'] = [
+                'username' => $admin['username']
+          ];
             header("Location: DashboardController.php");
             exit();
 }
